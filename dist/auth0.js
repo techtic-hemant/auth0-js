@@ -3997,7 +3997,8 @@
 	  'assertion',
 	  'client_assertion',
 	  'client_assertion_type',
-	  'code_verifier'
+	  'code_verifier',
+	  'partner'
 	];
 
 	var authorizeParams = [
@@ -4037,6 +4038,7 @@
 	  'request_uri',
 	  'code_challenge',
 	  'code_challenge_method',
+	  'partner',
 
 	  // ADDITIONAL_PARAMETERS:
 	  // https://auth0.com/docs/api/authentication?javascript#social
@@ -5175,7 +5177,7 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce'
 	    ])
 	    .with(objectHelper.blacklist(options, ['popupHandler']));
 
@@ -5443,7 +5445,7 @@
 	      'responseType',
 	      'responseMode',
 	      'scope',
-	      'audience'
+		  'audience'
 	    ])
 	    .with(options);
 	  body = this.transactionManager.process(body);
@@ -5522,7 +5524,7 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce'
 	    ])
 	    .with(options);
 
@@ -6074,7 +6076,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 
@@ -6138,7 +6141,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 
@@ -6215,7 +6219,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options.authParams);
 
@@ -6267,7 +6272,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 
@@ -6352,7 +6358,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 	  params = this.transactionManager.process(params);
@@ -6391,7 +6398,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 	  params = this.transactionManager.process(params);
@@ -6482,7 +6490,8 @@
 	      '_csrf',
 	      'state',
 	      '_intstate',
-	      'nonce'
+		  'nonce',
+		  'partner'
 	    ])
 	    .with(options);
 
@@ -6559,7 +6568,7 @@
 	      'state',
 	      '_intstate',
 	      'protocol',
-	      'nonce'
+		  'nonce'
 	    ])
 	    .with(options);
 
@@ -6704,7 +6713,7 @@
 	    'verificationCode',
 	    'phoneNumber',
 	    'email',
-	    'auth0Client'
+		'auth0Client'
 	  ]);
 	  cleanOption = objectHelper.toSnakeCase(cleanOption, ['auth0Client']);
 
@@ -7007,7 +7016,7 @@
 	    'domain',
 	    'tenant',
 	    'timeout',
-	    'appState'
+		'appState'
 	  ]);
 	  params = objectHelper.toSnakeCase(params, ['auth0Client']);
 	  params = parametersWhitelist.oauthAuthorizeParams(this.warn, params);

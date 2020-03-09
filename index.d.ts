@@ -421,6 +421,7 @@ export class Popup {
             audience?: string,
             /** determines if Auth0 should render the relay page or not and the caller is responsible of handling the response. */
             owp?: boolean,
+            partner?: any
         },
         callback: Auth0Callback<Auth0Result>,
     ): void;
@@ -936,6 +937,7 @@ export interface RenewAuthOptions {
      * @default false
      */
     usePostMessage?: boolean;
+    partner?: any;
 }
 
 export interface AuthorizeOptions {
